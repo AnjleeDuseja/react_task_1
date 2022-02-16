@@ -7,3 +7,6 @@
 textarea::placeholder {
   color: skyblue;
 }
+#shortAnswer::placeholder {
+  color: gray;
+}
