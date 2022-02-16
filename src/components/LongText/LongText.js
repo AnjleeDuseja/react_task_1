@@ -3,14 +3,16 @@ import useAuth from "../../hooks/useAuth";
 import styles from "./LongText.module.css";
 
 const LongText = (props) => {
-  const { question } = props.quiz;
+  const { question, answers } = props.quiz;
   const { handleSimpleInput } = useAuth();
 
   return (
     <div className=" p-2 ">
-      <h4 className=" text-success">{question}</h4>
-      <input
-        placeholder="long text"
+      <h5 className="">{question}</h5>
+      <p className="text-muted">{answers.map((ans) => ans)}</p>
+
+      <textarea
+        placeholder="Answer goes here..."
         onChange={handleSimpleInput}
         className={styles.LongTextInput}
         required

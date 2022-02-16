@@ -1,3 +1,9 @@
-.LongTextInput{
-    width: 500px;
+.LongTextInput {
+  width: 500px;
+  border: none;
+  display: inline-block;
+  background-color: white;
+}
+textarea::placeholder {
+  color: skyblue;
 }

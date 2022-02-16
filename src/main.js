@@ -35,7 +35,11 @@ export let quiz = [
     id: 4,
     type: "long_text",
     question: "Why is the sky blue?",
-    answers: [],
+    answers: [
+      "Because of physics? ",
+      "Because that the way it always was? ",
+      "or I don't know",
+    ],
     correct_answer: 0,
   },
   {
