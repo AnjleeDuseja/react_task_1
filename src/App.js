@@ -5,8 +5,11 @@ import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
     <div className="App">
+      
       <AuthProvider>
-        <Home></Home>
+        
+        <Home/>
+        
       </AuthProvider>
     </div>
   );

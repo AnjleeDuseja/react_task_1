@@ -5,6 +5,7 @@ const useQuizes = () => {
   //
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answeredQuiz, setAnsweredQuiz] = useState(quiz);
+  const [showResultPage, setShowResultPage] = useState(false);
 
   //   taking value from each input and updating the correct answer from quiz
   const handleSimpleInput = (e) => {
@@ -15,6 +16,7 @@ const useQuizes = () => {
   // allAnswers  holds the correct answers to all questions
   const handleSubmit = () => {
     const allAnswers = answeredQuiz.map((answer) => answer.correct_answer);
+    setShowResultPage(true)
     console.log(allAnswers);
   };
   // ------------------------------
@@ -26,6 +28,7 @@ const useQuizes = () => {
     setAnsweredQuiz,
     handleSimpleInput,
     handleSubmit,
+    showResultPage
   };
 };
 

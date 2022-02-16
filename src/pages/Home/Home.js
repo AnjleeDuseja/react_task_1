@@ -7,9 +7,11 @@ import MultipleChoice from "../../components/MultipleChoice/MultipleChoice";
 import MultipleSelectionChoice from "../../components/MultipleSelectionChoice/MultipleSelectionChoice";
 import ShortAnswer from "../../components/ShortAnswer/ShortAnswer";
 import TrueFalse from "../../components/TrueFalse/TrueFalse";
+import ResultPage from "../ResultPage/ResultPage";
 
 const Home = () => {
-  const { currentQuestion, setCurrentQuestion, handleSubmit } = useAuth();
+  const { currentQuestion, setCurrentQuestion, handleSubmit, showResultPage } =
+    useAuth();
   //   increasing quiz set no by 1 after clicking
   const handleNext = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -42,30 +44,37 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.home}>
-      {/* redering the matched quiz with type and curent number */}
-      <div className={styles.quizContainer}>{renderElement()}</div>
+    <div>
+      {showResultPage ? (
+        //redering the questions and answers summary page
+        <ResultPage />
+      ) : (
+        <div className={styles.home}>
+          {/* redering the matched quiz with type and curent number */}
+          <div className={styles.quizContainer}>{renderElement()}</div>
 
-      <div className={styles.HomeButtonContainer}>
-        {currentQuestion > 0 && (
-          <button onClick={handlePrev} className={styles.prevBtns}>
-            PREV
-          </button>
-        )}
-        {currentQuestion < quiz.length - 1 ? (
-          <button onClick={handleNext} className={styles.nextBtns}>
-            NEXT
-          </button>
-        ) : (
-          <button
-            onClick={handleSubmit}
-            className={styles.nextBtns}
-            style={{ backgroundColor: "skyblue", color: "black" }}
-          >
-            SUBMIT
-          </button>
-        )}
-      </div>
+          <div className={styles.HomeButtonContainer}>
+            {currentQuestion > 0 && (
+              <button onClick={handlePrev} className={styles.prevBtns}>
+                PREV
+              </button>
+            )}
+            {currentQuestion < quiz.length - 1 ? (
+              <button onClick={handleNext} className={styles.nextBtns}>
+                NEXT
+              </button>
+            ) : (
+              <button
+                onClick={handleSubmit}
+                className={styles.nextBtns}
+                style={{ backgroundColor: "skyblue", color: "black" }}
+              >
+                SUBMIT
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
