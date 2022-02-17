@@ -21,7 +21,11 @@ const ShortAnswer = (props) => {
         placeholder="Short Answer Here"
         onChange={handleAnswer}
         className="border-0 rounded d-flex justify-content-start my-2 text-secondary"
-        style={{ backgroundColor: "transparent", align: "left" }}
+        style={{
+          backgroundColor: "transparent",
+          align: "left",
+          textSizeAdjust: "30px",
+        }}
         required
         type="text"
       />

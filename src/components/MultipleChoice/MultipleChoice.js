@@ -11,16 +11,23 @@ const MultipleChoice = (props) => {
         <div className="py-2 h5">
           <b>{question}</b>
         </div>
-        <select onChange={handleSimpleInput} multiple className={styles.select}>
-          {answers.map((ans) => (
-            <option
-              className="d-block mx-2  border-2 border my-3 "
-              value={ans.answer}
-              label={ans.answer}
-              key={ans.id}
-            />
-          ))}
-        </select>
+        <div>
+          <select
+            onChange={handleSimpleInput}
+            multiple
+            className={styles.select}
+          >
+            {answers.map((ans) => (
+              <option
+                className="d-block mx-2  border-2 border rounded my-3 text-secondary"
+                style={{ backgroundColor: "#F5F5F5", borderColor: "gray" }}
+                value={ans.answer}
+                label={ans.answer}
+                key={ans.id}
+              ></option>
+            ))}
+          </select>
+        </div>
       </div>
     </div>
   );
